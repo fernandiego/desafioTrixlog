@@ -5,10 +5,10 @@
 
 
 	<link rel="stylesheet" type="text/css" href="style.css" /> <!-- our css -->
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /> <!-- css for leaflet maps -->
+	<link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" /> <!-- css for leaflet maps -->
 	<!-- all the scripts -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> <!-- JS for leaflet maps -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/leaflet/dist/leaflet.js"></script> <!-- JS for leaflet maps -->
 
 </head>
 <body>
@@ -20,7 +20,7 @@
   //Exemplo do plunker
 	  var map = L.map('map', {
       'center': [0, 0],
-      'zoom': 0
+      'zoom': 2
     });
 
 		var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
