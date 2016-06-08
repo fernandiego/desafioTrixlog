@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Desafio Trixlog</title>
+
+
+	<link rel="stylesheet" type="text/css" href="style.css" /> <!-- our css -->
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /> <!-- css for leaflet maps -->
+	<!-- all the scripts -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> <!-- JS for leaflet maps -->
+
+</head>
+<body>
+
+	<div id="map"></div>
+
+	<script>
+  //Fazendo tutorial básico do leaflet
+  //Exemplo do plunker
+	  var map = L.map('map', {
+      'center': [0, 0],
+      'zoom': 0
+    });
+
+		var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
+	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+	    subdomains: ['a','b','c','d'],
+	    mapId: 'rakshak.l937n12c',
+	    token: 'pk.eyJ1IjoicmFrc2hhayIsImEiOiJ5cHhqeHlRIn0.Vi87VjI1cKbl1lhOn95Lpw'
+		});
+
+		tileLayer.addTo(map);
+
+	</script>
+
+
+
+</body>
+</html>
