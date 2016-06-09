@@ -2,34 +2,13 @@
 //Fazendo tutorial básico do leaflet
 //Exemplo do plunker
 var map = L.map('map', {
-  'center': [0, 0],
-  'zoom': 2
+  'center': [-3.73631, -38.54373],
+  'zoom': 14
 });
-var marker = L.marker([51.5, -0.09]).addTo(map);
 
+//map.panTo(new L.LatLng(-3.75532, -38.54107));
 
-var circle = L.circle([51.508, -0.11], 500, {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5
-}).addTo(map);
-
-var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047]
-]).addTo(map);
-
-marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-circle.bindPopup("I am a circle.");
-polygon.bindPopup("I am a polygon.");
-
-var popup = L.popup()
-    .setLatLng([51.5, -0.09])
-    .setContent("I am a standalone popup.")
-    .openOn(map);
-
-    function onMapClick(e) {
+function onMapClick(e) {
         alert("You clicked the map at " + e.latlng);
     }
 
@@ -44,11 +23,22 @@ var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}
 
 tileLayer.addTo(map);
 
-var pointA = new L.LatLng(-3.74166, -3853532);
-var pointB = new L.LatLng(-3.74461, -38.5742);
-console.debug(pointA);
-console.debug(pointB);
-var pointList = [pointA, pointB];
+//pontos do caminho Casa-UFC(Pici)
+var pointA = new L.LatLng(-3.74166, -38.53532);
+var pointB = new L.LatLng(-3.74144, -38.53581);
+var pointC = new L.LatLng(-3.74313, -38.53656);
+var pointD = new L.LatLng(-3.7383, -38.54225);
+var pointE = new L.LatLng(-3.73733, -38.54319);
+var pointF = new L.LatLng(-3.73741, -38.54472);
+var pointG = new L.LatLng(-3.74194, -38.56645);
+var pointH = new L.LatLng(-3.74112, -38.56727);
+var pointI = new L.LatLng(-3.73892, -38.56889);
+var pointJ = new L.LatLng(-3.7386, -38.56926);
+
+var pointList = [pointA, pointB, pointC,
+                 pointD, pointE, pointF,
+                 pointG, pointH, pointI,
+                 pointJ];
 
 var firstpolyline = new L.Polyline(pointList, {
 color: 'blue',
