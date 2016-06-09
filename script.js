@@ -43,3 +43,18 @@ var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}
 });
 
 tileLayer.addTo(map);
+
+var pointA = new L.LatLng(-3.74166, -3853532);
+var pointB = new L.LatLng(-3.74461, -38.5742);
+console.debug(pointA);
+console.debug(pointB);
+var pointList = [pointA, pointB];
+
+var firstpolyline = new L.Polyline(pointList, {
+color: 'blue',
+weight: 3,
+opacity: 0.5,
+smoothFactor: 1
+
+});
+firstpolyline.addTo(map);
