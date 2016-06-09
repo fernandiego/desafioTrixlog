@@ -1,40 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Desafio Trixlog</title>
+	<head>
+		<title>Desafio Trixlog</title>
 
 
-	<link rel="stylesheet" type="text/css" href="style.css" /> <!-- our css -->
-	<link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" /> <!-- css for leaflet maps -->
-	<!-- all the scripts -->
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="bower_components/leaflet/dist/leaflet.js"></script> <!-- JS for leaflet maps -->
+		<link rel="stylesheet" type="text/css" href="style.css" /> <!-- our css -->
+		<link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" /> <!-- css for leaflet maps -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/leaflet/dist/leaflet.js"></script> <!-- JS for leaflet maps -->
 
-</head>
+	</head>
 <body>
-
-	<div id="map"></div>
-
-	<script>
-  //Fazendo tutorial básico do leaflet
-  //Exemplo do plunker
-	  var map = L.map('map', {
-      'center': [0, 0],
-      'zoom': 2
-    });
-
-		var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
-	    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-	    subdomains: ['a','b','c','d'],
-	    mapId: 'rakshak.l937n12c',
-	    token: 'pk.eyJ1IjoicmFrc2hhayIsImEiOiJ5cHhqeHlRIn0.Vi87VjI1cKbl1lhOn95Lpw'
-		});
-
-		tileLayer.addTo(map);
-
-	</script>
-
-
-
+	<div id="map">
+		<script type="text/javascript" src="script.js"></script>
+	</div>
 </body>
 </html>
