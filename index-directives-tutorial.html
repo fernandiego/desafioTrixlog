@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--Exemplos Diretivas-->
+<html>
+	<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css" /> <!-- our css -->
+		<link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" /> <!-- css for leaflet maps -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/leaflet/dist/leaflet.js"></script> <!-- JS for leaflet maps -->
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="script.js"></script>
+		<title>Desafio Trixlog</title>
+
+    <h1>Diretivas</h1>
+	</head>
+  <body ng-app="myApp">
+
+<div ng-app="" ng-init="qtd=0;price=0">
+      <p><b>Exemplo com texto</b><p>
+        <p>Nome: <input type="text" ng-model="nome"></p>
+        <p>Você escreveu: <b>{{nome}}</b></p>
+
+      <p><b>Exemplo com número</b><p>
+        Quantidade: <input type="number" ng-model="qtd">
+        Preço:      <input type="number" ng-model="price">
+        <p><b>Total:</b> {{qtd * price}}</p>
+
+</div>
+
+<div ng-init="nomess=['João','Maria','Rosa']">
+    <p><b>Exemplo com lista de textos</b><p>
+      <ul>
+        <li ng-repeat = "b in nomess">
+          {{b}}
+        </li>
+      </ul>
+
+<div ng-init="nomes=[
+      {nome:'Maria', pais:'Brasil'},
+      {nome:'Rosa', pais:'Brasil'},
+      {nome:'João', pais:'Brasil'}
+      ]">
+      <p><b>Lista nomes, país</b></p>
+        <ul>
+          <li ng-repeat = "a in nomes">
+            {{a.nome + ', ' + a.pais}}
+</div>
+
+<w3-test-directive></w3-test-directive>
+
+
+  </body>
+</html>
