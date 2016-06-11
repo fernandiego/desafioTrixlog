@@ -20,12 +20,12 @@
       <p><b>Exemplo com texto</b><p>
         <p>Nome: <input type="text" ng-model="nome"></p>
         <p>Você escreveu: <b>{{nome}}</b></p>
-
+<hr>
       <p><b>Exemplo com número</b><p>
         Quantidade: <input type="number" ng-model="qtd">
         Preço:      <input type="number" ng-model="price">
         <p><b>Total:</b> {{qtd * price}}</p>
-
+<hr>
 </div>
 
 <div ng-init="nomess=['João','Maria','Rosa']">
@@ -35,7 +35,7 @@
           {{b}}
         </li>
       </ul>
-
+<hr>
 <div ng-init="nomes=[
       {nome:'Maria', pais:'Brasil'},
       {nome:'Rosa', pais:'Brasil'},
@@ -46,9 +46,7 @@
           <li ng-repeat = "a in nomes">
             {{a.nome + ', ' + a.pais}}
 </div>
-
+<hr>
 <w3-test-directive></w3-test-directive>
-
-
   </body>
 </html>

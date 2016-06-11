@@ -14,4 +14,9 @@ var app = angular
             return {
               template : "<h3>Testando</h3>"
             };
+          })
+          app.directive('myCustomer', function() {
+            return {
+              templateUrl: 'index-maps.html'
+            };
           });
