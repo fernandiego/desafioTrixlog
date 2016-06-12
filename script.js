@@ -1,11 +1,20 @@
 var app = angular
           .module("myApp",  []);
-          app.directive('myMap', [ function() {
+
+          app.service('leafletData',
+          function() {
+            this.map = {};
+            this.poli = [];
+            this.markers = [];
+            this.getMap = function() {
+              return this.map;
+            };
+          });
+          app.directive('myMap',  function(leafletData) {
             return {
-              replace: true,
-              template: '<div></div>',
+
               link: function (scope, element, attributes) {
-                var map = L.map('map', {
+                leafletData.map = L.map('map', {
                   'center': [-3.73631, -38.54373],
                   'zoom': 14
                 });
@@ -16,16 +25,24 @@ var app = angular
                   token: 'pk.eyJ1IjoicmFrc2hhayIsImEiOiJ5cHhqeHlRIn0.Vi87VjI1cKbl1lhOn95Lpw'
                 });
 
-                tileLayer.addTo(map);
+                tileLayer.addTo(leafletData.map);
+                leafletData.map.whenReady(  function(){
+                  for (var i = 0; i < leafletData.poli.length; i++) {
+                    leafletData.poli[i].addTo(leafletData.map);
+                  }
+                  for (var i = 0; i < leafletData.markers.length; i++) {
+                    leafletData.markers[i].addTo(leafletData.map);
+                  }
+                //  firstpolyline.addTo(leafletData.map);
+                });
 
               }
             };
           }
-        ]);
-        app.directive('myPoli', [ function() {
+        );
+        app.directive('myPoli', function(leafletData) {
           return {
-              replace: true,
-              template: '<div></div>',
+
               link: function (scope, element, attributes) {
                 var pointA = new L.LatLng(-3.74166, -38.53532);
                 var pointB = new L.LatLng(-3.74144, -38.53581);
@@ -50,8 +67,18 @@ var app = angular
                 smoothFactor: 1
 
                 });
-                firstpolyline.addTo(map);
+                leafletData.poli.push(firstpolyline);
+
               }
             };
           }
-        ]);
+        );
+        app.directive('myMarker', function(leafletData) {
+          return {
+
+              link: function (scope, element, attributes) {
+                var marker = L.marker([-3.74166, -38.53532]);
+                leafletData.markers.push(marker);
+              }
+            }
+          });
