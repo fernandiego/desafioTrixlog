@@ -9,10 +9,10 @@ var map = L.map('map', {
 //map.panTo(new L.LatLng(-3.75532, -38.54107));
 
 function onMapClick(e) {
-        alert("You clicked the map at " + e.latlng);
-    }
+  alert("You clicked the map at " + e.latlng);
+}
 
-    map.on('click', onMapClick);
+map.on('click', onMapClick);
 
 var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -36,15 +36,15 @@ var pointI = new L.LatLng(-3.73892, -38.56889);
 var pointJ = new L.LatLng(-3.7386, -38.56926);
 
 var pointList = [pointA, pointB, pointC,
-                 pointD, pointE, pointF,
-                 pointG, pointH, pointI,
-                 pointJ];
+  pointD, pointE, pointF,
+  pointG, pointH, pointI,
+  pointJ];
 
-var firstpolyline = new L.Polyline(pointList, {
-color: 'blue',
-weight: 3,
-opacity: 0.5,
-smoothFactor: 1
+  var firstpolyline = new L.Polyline(pointList, {
+    color: 'blue',
+    weight: 3,
+    opacity: 0.5,
+    smoothFactor: 1
 
-});
-firstpolyline.addTo(map);
+  });
+  firstpolyline.addTo(map);
