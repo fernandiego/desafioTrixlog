@@ -41,7 +41,7 @@ angular.module("ngLeaflet").directive('myMarker', function(leafletData) {
   }
 });
 
-angular.module("ngLeaflet")..directive('myPoli', function(leafletData) {
+angular.module("ngLeaflet").directive('myPoli', function(leafletData) {
   return {
 
     link: function (scope, element, attributes) {
