@@ -1,7 +1,8 @@
-var app = angular
+angular
 .module("myApp",  []);
 
-app.service('leafletData',
+angular
+.module("myApp").service('leafletData',
 function() {
   this.map = {};
   this.poli = [];
@@ -10,7 +11,8 @@ function() {
     return this.map;
   };
 });
-app.directive('myMap',  function(leafletData) {
+angular
+.module("myApp").directive('myMap',  function(leafletData) {
   return {
 
     link: function (scope, element, attributes) {
@@ -40,7 +42,8 @@ app.directive('myMap',  function(leafletData) {
   };
 }
 );
-app.directive('myPoli', function(leafletData) {
+angular
+.module("myApp").directive('myPoli', function(leafletData) {
   return {
 
     link: function (scope, element, attributes) {
@@ -73,7 +76,8 @@ app.directive('myPoli', function(leafletData) {
     };
   }
 );
-app.directive('myMarker', function(leafletData) {
+angular
+.module("myApp").directive('myMarker', function(leafletData) {
   return {
 
     link: function (scope, element, attributes) {
