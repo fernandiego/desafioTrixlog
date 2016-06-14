@@ -2,18 +2,20 @@ angular
 .module("myApp",  []);
 
 angular
-.module("myApp").service('leafletData',
-function() {
-  this.map = {};
-  this.poli = [];
-  this.markers = [];
-  this.getMap = function() {
-    return this.map;
+  .module("myApp")
+  .service('leafletData',
+  function() {
+    this.map = {};
+    this.poli = [];
+    this.markers = [];
+    this.getMap = function() {
+      return this.map;
   };
 });
 angular
-.module("myApp").directive('myMap',  function(leafletData) {
-  return {
+  .module("myApp")
+  .directive('myMap',  function(leafletData) {
+    return {
 
     link: function (scope, element, attributes) {
       leafletData.map = L.map('map', {
@@ -29,10 +31,10 @@ angular
 
       tileLayer.addTo(leafletData.map);
       leafletData.map.whenReady(  function(){
-        for (var i = 0; i < leafletData.poli.length; i++) {
+        for ( i = 0; i < leafletData.poli.length; i++) {
           leafletData.poli[i].addTo(leafletData.map);
         }
-        for (var i = 0; i < leafletData.markers.length; i++) {
+        for ( i = 0; i < leafletData.markers.length; i++) {
           leafletData.markers[i].addTo(leafletData.map);
         }
         //  firstpolyline.addTo(leafletData.map);
@@ -43,8 +45,9 @@ angular
 }
 );
 angular
-.module("myApp").directive('myPoli', function(leafletData) {
-  return {
+  .module("myApp")
+  .directive('myPoli', function(leafletData) {
+    return {
 
     link: function (scope, element, attributes) {
       var pointA = new L.LatLng(-3.74166, -38.53532);
@@ -77,12 +80,13 @@ angular
   }
 );
 angular
-.module("myApp").directive('myMarker', function(leafletData) {
-  return {
+  .module("myApp")
+  .directive('myMarker', function(leafletData) {
+    return {
 
     link: function (scope, element, attributes) {
       var marker = L.marker([-3.74166, -38.53532]);
       leafletData.markers.push(marker);
     }
-  }
+  };
 });

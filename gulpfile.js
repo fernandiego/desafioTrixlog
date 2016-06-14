@@ -1,11 +1,17 @@
 var gulp = require('gulp');
 var jshint = require('gulp-jshint');
+var uglify = require('gulp-uglify');
 
 gulp.task('jshint', function()  {
-  return gulp.src('*.js')
+  return gulp.src('script.js')
   .pipe(jshint())
-  .pipe(jshintreporter('default'));
+  .pipe(jshint.reporter('default'));
 });
-gulp.task('default', function(){
 
+gulp.task('uglify', function() {
+  return gulp.src('script.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('dist'));
 });
+
+gulp.task('default', ['jshint', 'uglify']);
