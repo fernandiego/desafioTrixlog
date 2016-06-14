@@ -20,7 +20,7 @@ angular
     link: function (scope, element, attributes) {
       leafletData.map = L.map('map', {
         'center': [-3.73631, -38.54373],
-        'zoom': 14
+        'zoom': 13
       });
       var tileLayer = L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -37,13 +37,11 @@ angular
         for ( i = 0; i < leafletData.markers.length; i++) {
           leafletData.markers[i].addTo(leafletData.map);
         }
-        //  firstpolyline.addTo(leafletData.map);
       });
 
     }
   };
-}
-);
+});
 angular
   .module("myApp")
   .directive('myPoli', function(leafletData) {
@@ -87,6 +85,10 @@ angular
     link: function (scope, element, attributes) {
       var marker = L.marker([-3.74166, -38.53532]);
       leafletData.markers.push(marker);
+       marker.bindPopup("Casa").openPopup();
+       var marker2 = L.marker([-3.7386, -38.56926]);
+       leafletData.markers.push(marker2);
+       marker2.bindPopup("UFC").openPopup();
     }
   };
 });

@@ -5,4 +5,3 @@
 - http://stackoverflow.com/questions/33999173/angularjs-leaflet-initialise-a-leaflet-map-on-a-service
 - https://plnkr.co/edit/JbeNVYDlqymoPCYRj1Pw?p=preview
 - https://github.com/tombatossals/angular-leaflet-directive/tree/master/examples
-  

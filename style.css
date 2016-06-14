@@ -1,2 +1,11 @@
 html, body, #map { height: 95%;
-                   width: 95%;}
+                   width: 95%;
+                 }
+body {
+  background-color: #98FB98;
+}
+
+h1 {
+    color: #696969;
+    text-align: center;
+}
