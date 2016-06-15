@@ -1,3 +1,5 @@
+// Script funcional
+
 angular
 .module("myApp",  []);
 
